@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>TITEL</title>
+    <!-- Main CSS -->
+    <link rel="stylesheet" type="text/css" href="~/css/main.css">
+    <!-- Bootstrap - Meny -->
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" type="text/css">
+    <!-- Bootstrap - Fonts -->
+    <link rel="stylesheet" href="~/css/creative.css" type="text/css">
+    <!-- Bootstrap - "Flyt"-metoder -->
+    <script src="~/js/jquery.js"></script>
+    <!-- Bootstrap - "ÖppnaKnapp"-event -->
+    <script src="~/js/bootstrap.min.js"></script>
+    <!-- Bootstrap - "StängaKnapp"-event -->
+    <script src="~/js/jquery.easing.min.js"></script>
+    <!-- Bootstrap - Text-anpassning -->
+    <script src="~/js/jquery.fittext.js"></script>
+    <!-- Bootstrap - Mobilanpassad -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body id="page-top">
+    <header>
+        <!-- Bootstrap-MENY -->
+        <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- Mobilknapp-->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="logga"><a href="#page-top">LOGGA</a></div>
+                </div>
+                <!-- Länkar -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <a class="page-scroll" href="/">Startsida</a>
+                                </li>
+                                <li>
+                                    <a class="page-scroll" href="/">Annan sida</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <section>
+            <div class="row">
+                <div class="shadowBox col-lg-8 col-lg-offset-2 text-center">
+                    @RenderBody()
+                </div>
+            </div>
+        </section>
+    </header>
+    <footer class="foot">Footer</footer>
+    <!-- Bootstrap - Menyn stängs vid klick -->
+    <script src="~/js/creative.js"></script>
+</body>
+</html>
