@@ -21,7 +21,7 @@ p {
 	/* Fallback for web browsers that don't support RGBa */
     background-color: rgb(0, 0, 0);
     /* RGBa with 0.6 opacity */
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.6);
     /* For IE 5.5 - 7*/
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
     /* For IE 8*/
@@ -31,4 +31,24 @@ p {
 	position: absolute;
 	top: 0px;
 	left: 0px;
+}
+
+.picsOnStartPage{
+	height: 400px;
+	width: 400px
+}
+.formInMeny {
+	height: 21px;
+	width: 100px;
+	font-size: 12px;
+	color: black;
+
+	font-family: verdana;
+}
+
+.menyButton{
+	color: black;
+	height: 22px;
+	font-size: 12px;
+	font-family: verdana;
 }
