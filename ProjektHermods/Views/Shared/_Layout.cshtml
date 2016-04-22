@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>TITEL</title>
+    <title>ReceptTips.SE © All Rights Reserved</title>
     <!-- Main CSS -->
     <link rel="stylesheet" type="text/css" href="~/css/main.css">
     <!-- Bootstrap - Meny -->
@@ -33,7 +33,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <div class="logga"><a href="#page-top">LOGGA</a></div>
+                    <div class="logga"><a href="#page-top"><img src="~/css/logga.png" alt="Logga" /></a></div>
                 </div>
                 <!-- Länkar -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -41,10 +41,21 @@
                         <div class="row">
                             <ul class="nav navbar-nav navbar-right">
                                 <li>
+                                    <form action="/" method="post">
+                                        <input class="formInMeny" name="loginname" type="text" placeholder="Användarnamn" />
+                                        <input class="formInMeny" name="loginpassword" type="password" placeholder="Lösenord" />
+                                        <input class="menyButton" type="submit" name="loginButton" value="Logga in" />
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="row">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
                                     <a class="page-scroll" href="/">Startsida</a>
                                 </li>
                                 <li>
-                                    <a class="page-scroll" href="/">Annan sida</a>
+                                    <a class="page-scroll" href="/">Skapa Konto</a>
                                 </li>
                             </ul>
                         </div>
@@ -60,7 +71,7 @@
             </div>
         </section>
     </header>
-    <footer class="foot">Footer</footer>
+    <footer class="foot">ReceptTips.SE © All Rights Reserved</footer>
     <!-- Bootstrap - Menyn stängs vid klick -->
     <script src="~/js/creative.js"></script>
 </body>

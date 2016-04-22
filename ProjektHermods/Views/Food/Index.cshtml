@@ -1,0 +1,15 @@
+﻿
+@using ProjektHermods.Models;
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Food</h2>
+
+@using (ReceptTipsContext context = new ReceptTipsContext())
+{
+    foreach (Food item in context.Foods)
+    {
+        <p>@item.foodName</p>
+    }
+}
