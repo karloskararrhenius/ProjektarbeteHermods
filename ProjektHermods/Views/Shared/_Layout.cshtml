@@ -41,12 +41,24 @@
                         <div class="row">
                             <ul class="nav navbar-nav navbar-right">
                                 <li>
-                                    <form action="/" method="post">
-                                        <input class="formInMeny" name="loginname" type="text" placeholder="Användarnamn" />
-                                        <input class="formInMeny" name="loginpassword" type="password" placeholder="Lösenord" />
-                                        <input class="menyButton" type="submit" name="loginButton" value="Logga in" />
-                                    </form>
+                                    @if ((bool)Session["IsLoggedIn"] == false)
+                                    {
+                                        <form action="/LogInLogOut/Index" method="post">
+                                            <input class="formInMeny" name="loginname" type="text" placeholder="Användarnamn" />
+                                            <input class="formInMeny" name="loginpassword" type="password" placeholder="Lösenord" />
+                                            <input class="menyButton" type="submit" name="loginButton" value="Logga in" />
+                                        </form>
+                                    }
                                 </li>
+                                @if ((bool)Session["IsLoggedIn"])
+                                {
+                                    <li>
+                                        Inloggad som: <span class="greentext"><strong>@Session["username"]</strong></span>
+                                        <form style="display: inline;" action="/LogInLogOut/Index" method="post">
+                                            <input class="menyButton" type="submit" name="logoutButton" value="Logga ut" />
+                                        </form>
+                                    </li>
+                                }
                             </ul>
                         </div>
                         <div class="row">
@@ -55,7 +67,7 @@
                                     <a class="page-scroll" href="/">Startsida</a>
                                 </li>
                                 <li>
-                                    <a class="page-scroll" href="/">Skapa Konto</a>
+                                    <a class="page-scroll" href="/CreateAccount/Index">Skapa Konto</a>
                                 </li>
                             </ul>
                         </div>
