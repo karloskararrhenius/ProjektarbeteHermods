@@ -142,14 +142,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CreateAccountController.cs" />
     <Compile Include="Controllers\DrinkController.cs" />
     <Compile Include="Controllers\FoodController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
+    <Compile Include="Controllers\LogInLogOutController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Drink.cs" />
     <Compile Include="Models\Food.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReceptTipsContext.cs" />
   </ItemGroup>
@@ -168,6 +171,8 @@
     <Content Include="scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Drink\Index.cshtml" />
     <Content Include="Views\Food\Index.cshtml" />
+    <Content Include="Views\CreateAccount\Index.cshtml" />
+    <Content Include="Views\LogInLogOut\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
