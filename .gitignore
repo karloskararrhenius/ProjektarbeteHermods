@@ -1,5 +1,5 @@
-ProjektHermods/obj/Debug/
-ProjektHermods/bin/
+ProjektHermods/obj/Debug/*
+ProjektHermods/bin/*
 [Tt]humbs.db
 
 ## Ignore Visual Studio temporary files, build results, and
