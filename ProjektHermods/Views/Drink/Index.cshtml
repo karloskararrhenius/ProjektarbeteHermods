@@ -8,8 +8,11 @@
 
 @using (ReceptTipsContext context = new ReceptTipsContext())
 {
-    foreach (Drink item in context.Drinks)
+    foreach (Recept item in context.Recepts)
     {
-        <p>@item.drinkName</p>
+        if (item.ChoosenTypes.Typ == "Dricka")
+        {
+            <p>@item.Name</p>
+        }
     }
 }

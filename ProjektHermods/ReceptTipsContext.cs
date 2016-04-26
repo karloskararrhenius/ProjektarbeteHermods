@@ -7,8 +7,9 @@ namespace ProjektHermods
     {
         public ReceptTipsContext() : base("ReceptTipsDB") { }
 
-        public DbSet<Food> Foods { get; set; }
-        public DbSet<Drink> Drinks { get; set; }
+        public DbSet<Ingrediens> Ingrediens { get; set; }
+        public DbSet<Recept> Recepts { get; set; }
         public DbSet<UserModel> UserModels { get; set; }
+        public DbSet<ChoosenType> ChoosenTypes { get; set; }
     }
 }
