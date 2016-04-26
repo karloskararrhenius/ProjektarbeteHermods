@@ -48,10 +48,13 @@ namespace ProjektHermods.Controllers
                         context.UserModels.Add(newUser);
                         context.SaveChanges();
 
+                        //Lägger användarnamnet i en SEKTION
+                        Session["username"] = nameinput;
+                        //Slår om ISLOGGEDIN-sektionen till TRUE!
+                        Session["IsLoggedIn"] = true;
+
                         //Skicka iväg ett meddelande
-                        ViewBag.messageToUser = "Kontot är skapat, " + @nameinput + " ! " +
-                                                "Nu kan du logga in överst på sidan! " +
-                                                "Mvh// ReceptTips.SE";
+                        ViewBag.messageToUserAccountCreated = "Skapat konto!";
                     }
                     else
                     {
