@@ -8,8 +8,11 @@
 
 @using (ReceptTipsContext context = new ReceptTipsContext())
 {
-    foreach (Food item in context.Foods)
+    foreach (Recept item in context.Recepts)
     {
-        <p>@item.foodName</p>
+        if(item.ChoosenTypes.Typ == "Mat")
+        {
+            <p>@item.Name</p>
+        }
     }
 }
