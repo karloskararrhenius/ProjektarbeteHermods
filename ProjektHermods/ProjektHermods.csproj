@@ -142,6 +142,7 @@
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="scripts\JavaScript.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
@@ -154,6 +155,7 @@
     <Compile Include="Controllers\FoodController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\LogInLogOutController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -182,6 +184,7 @@
     <Content Include="Views\CreateAccount\Index.cshtml" />
     <Content Include="Views\LogInLogOut\Index.cshtml" />
     <Content Include="Views\Index\Error.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
