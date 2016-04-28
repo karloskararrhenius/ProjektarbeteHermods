@@ -13,5 +13,10 @@ namespace ProjektHermods.Controllers
         {
             return View();
         }
+        //om det uppstår ett fel på vår sida så vissas denna sidan istället
+        public ActionResult Error()
+        {
+            return View();
+        }
     }
 }
