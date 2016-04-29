@@ -19,13 +19,13 @@
 
 
 
-    <div class="col-lg-6">
+    <div class="col-lg-6 shadowBox">
         <h1 text-align:left">@Model.Name</h1>
         <h3  text-align:left">Ingredients</h3>
         @foreach (var item in Model.Ingredients)
         {
             <ul>
-                <li style="color:black; text-align:left">@item.Name</li>
+                <li style="text-align:left">@item.Name</li>
             </ul>
 
         }

@@ -135,6 +135,10 @@ ul{
     color: white;
 }
 
+.blacktext {
+    color: black;
+}
+
 .note {
     background: rgba(0,0,0,0.9);
     top: auto;
