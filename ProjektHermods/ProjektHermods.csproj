@@ -156,12 +156,9 @@
     <Compile Include="Controllers\FoodController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\LogInLogOutController.cs" />
-
     <Compile Include="Controllers\ReceptsController.cs" />
     <Compile Include="Controllers\ReceptsMatController.cs" />
-
     <Compile Include="Controllers\SearchController.cs" />
-
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -170,7 +167,7 @@
     <Compile Include="Models\ChoosenType.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReceptTipsContext.cs" />
+    <Compile Include="Models\ReceptTipsContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -188,7 +185,6 @@
     <Content Include="Views\Food\Index.cshtml" />
     <Content Include="Views\CreateAccount\Index.cshtml" />
     <Content Include="Views\LogInLogOut\Index.cshtml" />
-
     <Content Include="Views\Recepts\Details.cshtml" />
     <Content Include="Views\Recepts\Index.cshtml" />
     <Content Include="Views\ReceptsMat\Details.cshtml" />
@@ -196,10 +192,8 @@
     <Content Include="Views\Index\Kontakt.cshtml" />
     <Content Include="Views\Index\FormulärSkickat.cshtml" />
     <Content Include="Views\CreateRecipe\Index.cshtml" />
-
     <Content Include="Views\Index\Error.cshtml" />
     <Content Include="Views\Search\Index.cshtml" />
-
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
