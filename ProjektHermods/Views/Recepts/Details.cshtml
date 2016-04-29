@@ -4,11 +4,7 @@
     ViewBag.Title = "Details";
     List<ProjektHermods.Models.Recept> recepies = ViewBag.Recepies;
 }
-<style>
-   
-   
-  
-</style>
+
 <h2 style="color:black;">Details</h2>
 <div class="row">
     <div class="col-lg-3">
@@ -17,18 +13,18 @@
         <br />
         <p style="text-align:center;"><a href="/Recepts/Index" class="btn btn-primary" role="button">Tillbaka</a></p>
     </div>      
-    <div class="col-lg-6">
-        <h1 style="color:black;text-align:left">@Model.Name</h1>
-        <h3 style="color:black; text-align:left">Ingredients</h3>
+    <div class="col-lg-6 shadowBox">
+        <h1 style="text-align:left">@Model.Name</h1>
+        <h3 style="text-align:left">Ingredients</h3>
         @foreach (var item in Model.Ingredients)
         {
             <ul>
-                <li style="color:black; text-align:left">@item.Name</li>
+                <li style="text-align:left">@item.Name</li>
             </ul>
            
         }
-        <h3 style="color:black; text-align:left">Recept</h3>
-        <p style="color:black;text-align:left">@Model.Info</p>
+        <h3 style="text-align:left">Recept</h3>
+        <p style="text-align:left">@Model.Info</p>
         
     </div>  
     <div class="col-lg-3">
@@ -40,7 +36,7 @@
                 <div class="thumbnail">
                     <img src="https://cdn3.cdnme.se/cdn/7-1/2907590/images/2011/drinkar_163425595.jpg" alt="">
                     <div class="caption">
-                        <p>@item.Name</p>
+                        <p class="blacktext">@item.Name</p>
                         <p><a href="/Recepts/Details/@item.Id" class="btn btn-primary" role="button">Receptet</a></p>
                         <i class="fa fa-clock-o fa-lg" style="margin-left:-100px;" aria-hidden="true">30 Min</i>
                         <div class="rating pull-right" style="display:inline-block; font-size:large;">

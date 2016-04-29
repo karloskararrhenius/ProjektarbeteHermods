@@ -21,7 +21,7 @@ hr.light {
 }
 
 a {
-    color: green;
+    color: lightblue;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -132,7 +132,7 @@ aside {
     .navbar-default {
 		/* THOM färg på bakgrund BREDSIDA (STANDARD) */
     background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.9);
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
  }
