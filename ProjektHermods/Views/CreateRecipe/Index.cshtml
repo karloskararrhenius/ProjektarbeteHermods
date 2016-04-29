@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+
+}
+<style>
+    form{
+        background-color:black;
+    }
+</style>
+       
+<h2>Index</h2>
+@if ((bool)Session["IsLoggedIn"] == true)
+{
+
+
+<form  method="post" action="/CreateRecipe/Index">
+    <input class="standardform" type="text" placeholder="Namn" name="NameInput"/><br />
+    <input type="radio" value="Mat" name="TypInput">Mat<br />
+    <input type="radio" value="Dricka" name="TypInput" checked/>Dricka<br />
+    <input class="standardform" type="text" placeholder="Info" name="InfoInput"/><br />
+    <input class="standardform" type="text" placeholder="BildAdress" name="PictureInput"/><br />
+    <input class="standardform" type="text" placeholder="Ingredienser" name="IngrediensInput"/><br />
+    <input class="standardknapp"type="submit" value="Lägg Till" name="buttonAdd"/>
+</form>
+    if (ViewBag.Felmeddelande != null)
+    {
+        string[] input = ViewBag.Felmeddelande.Split('!');
+        for (int i = 0; i < input.Count(); i++)
+        {
+            <p>@input[i]</p>
+        }
+
+    }
+}
+else
+{
+    <p>Du måste vara inloggad för att kunna lägga till recept</p>
+}

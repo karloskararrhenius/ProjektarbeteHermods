@@ -1,0 +1,73 @@
+﻿@model IEnumerable<ProjektHermods.Models.Recept>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1 style="color:black;">Recept</h1>
+<style>
+    .jumbotron{
+        background-image: url("http://www.dricka.se/media/fokus/arets-bartender.jpg");
+        width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+    background-size: cover;
+    }
+</style>
+<div class="jumbotron">
+    <div class="container">
+        <h1>Drinkar</h1>
+        <p style="color:white;">Välkommen till ReceptTips Drink sida!</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+    </div>
+</div>
+<h3 style="color:black; text-align: center;">Välj Ingridiens</h3>
+<div class="row">
+
+    <a href="#" class="btn btn-primary btn-lg col-lg-2">Vodka</a>
+    <a href="#" class="btn btn-primary btn-lg col-lg-2">Rom</a>
+    <a href="#" class="btn btn-primary btn-lg col-lg-2">Likör</a>
+    <a href="#" class="btn btn-primary btn-lg col-lg-2">Whiskey</a>
+    <a href="#" class="btn btn-primary btn-lg col-lg-2">Tequila</a>
+    <a href="#" class="btn btn-primary btn-lg col-lg-2">Cider</a>
+
+</div>
+<br />
+<div class="row">
+    <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+            <input type="text" class="form-control" style="width: 1150px;" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>
+<br />
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div class="row">
+    @foreach (var item in Model.Where(r => r.ChoosenTypes.Typ == "Dricka"))
+    {
+        <div class="col-sm-6 col-md-4 col-lg-4">
+            <div class="thumbnail">
+                <img src="@item.Picture" alt="Bild hittades ej">
+                <div class="caption">
+                    <p>@item.Name</p>
+                    <p><a href="/Recepts/Details/@item.Id" class="btn btn-primary" role="button">Receptet</a></p>
+                    <i class="fa fa-clock-o fa-lg" style="margin-left:-100px;" aria-hidden="true">30 Min</i>
+                    <div class="rating pull-right" style="display:inline-block; font-size:large;">
+                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
+
+
+
+
+

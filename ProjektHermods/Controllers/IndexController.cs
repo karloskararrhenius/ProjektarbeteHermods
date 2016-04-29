@@ -13,5 +13,13 @@ namespace ProjektHermods.Controllers
         {
             return View();
         }
+        public ActionResult Kontakt()
+        {
+            return View();
+        }
+        public ActionResult FormulärSkickat()
+        {
+            return View();
+        }
     }
 }

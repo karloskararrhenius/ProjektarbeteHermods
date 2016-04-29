@@ -5,6 +5,7 @@ namespace ProjektHermods.Controllers
 {
     public class CreateAccountController : Controller
     {
+        
         // GET: CreateAccount
         public ActionResult Index()
         {
