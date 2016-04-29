@@ -7,6 +7,13 @@ body {
 
 p {
 	font-family: verdana;
+	color: black;
+}
+li{
+	font-family: verdana;
+}
+ul{
+	font-family: verdana;
 }
 
 .foot {
@@ -62,6 +69,37 @@ p {
 }
 .greentext{
 	color: lightgreen;
+}
+
+.rating > span:hover:before {
+   content: "\2605";
+   position: absolute;
+}
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+}
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+}
+.rating{
+	position:;
 }
 .ingredients-div {
     background: rgba(0,0,0,0.9);
@@ -146,4 +184,5 @@ ul .ui-autocomplete {
 }
 #SearchText{
     color:black;
+
 }

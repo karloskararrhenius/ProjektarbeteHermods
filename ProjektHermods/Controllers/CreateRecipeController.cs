@@ -1,70 +1,75 @@
 ﻿using ProjektHermods.Models;
 using System;
 using System.Collections.Generic;
-using System.Web.Mvc;
-using System.Web.Routing;
-using System.Data.Entity;
 using System.Linq;
+using System.Web;
+using System.Web.Mvc;
 
-namespace ProjektHermods
+namespace ProjektHermods.Controllers
 {
-    public class MvcApplication : System.Web.HttpApplication
+    public class CreateRecipeController : Controller
     {
-        protected void Application_Start()
+        // GET: CreateRecipe
+        public ActionResult Index()
         {
-            AreaRegistration.RegisterAllAreas();
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
-        }
 
-        void Session_Start(object sender, EventArgs e) //Startup
-        {
-            //Variabel för info om man är inloggad
-            Session["IsLoggedIn"] = false;
-
-            //####################################################//
-            List<string> allIngrediends; //Lagra ingredienser     //
-            //####################################################//
-            //  Metoden: "AddRecipeToDB()" - FEM Parametrar:      //
-            //  (1)Namn, (2)Typ, (3)Info, (4)Bild, (5)Ingrediens  //
-            //####################################################//
-            #region Lägga in Data i DB(Om den är tom)
-            int thingsInDB;
-            using (ReceptTipsContext context = new ReceptTipsContext())
+            if (Request["buttonAdd"] != null)
             {
-                thingsInDB = context.Recepts.Count();
+                string allaFel = "";
+                string nameOnItem = Request["NameInput"]; //Sätter nameOnItem till det du skrivr i formuläret
+                string ingrediensType = Request["TypInput"]; ////Sätter ingredienstype till det du skrivr i formuläret
+                string infoAboutItem = Request["InfoInput"]; //Sätter infoaboutitem till det du skrivr i formuläret
+                string pictureLink = Request["PictureInput"]; //Bildadress, "img/nophoto.jpg" = (För standardbild)
+                string allIngrediends = Request["IngrediensInput"]; //Sätter allingrediends till det du skrivr i formuläret
+                if (nameOnItem == "")
+                {
+                    allaFel += " Du glömde ett namn!";
+                }
+                if (infoAboutItem == "")
+                {
+                    allaFel += " Du glömde ReceptInfo, Hur ska vi veta hur man gör nuu?!";
+                }
+                if (pictureLink == "")
+                {
+                    allaFel += " Du Glömde bild, ändra det nu eller så får du en default bild";
+                    pictureLink = "/img/nophoto.jpg!";
+                }
+                else
+                {
+                    bool anyFineFormat = false;
+                    if (pictureLink.Contains(".jpg")||pictureLink.Contains(".png")||pictureLink.Contains(".gif"))
+                    {
+                        anyFineFormat = true;
+                    }
+                    if (anyFineFormat == false)
+                    {
+                        allaFel += " Bilden får bara vara i formaten: .jpg/.png/.gif!";
+                    }
+                }
+                if (allIngrediends == "")
+                {
+                    allaFel += " Du glömde Ingredienser din idiot";
+                }
+               
+                string[] input = allIngrediends.Split(','); //skapar en array som heter input, som splittar dina ingridenser när du skriver ett , i rutan
+                List<string> allIngrediens = new List<string>();//skapar en lista utan dina ingrideienser
+                for (int i = 0; i < input.Count(); i++)//räknar ut hur många du har skrivit
+                {
+                    
+                  allIngrediens.Add(input[i]);//lägger till din input/ingridienser
+                }
+                if (allaFel == "")
+                {
+
+                
+                AddRecipeToDB(nameOnItem, ingrediensType, infoAboutItem, pictureLink, allIngrediens);//slutligen lägger till i databasen
+                }
+                if (allaFel != "")
+                {
+                    ViewBag.Felmeddelande = allaFel;
+                }
             }
-            if(thingsInDB == 0) {
-                allIngrediends = new List<string>() { "Tomat", "Ost" };
-                AddRecipeToDB("Margherta", "Mat", "How to do...", "/img/nophoto.jpg", allIngrediends);
-             
-                allIngrediends = new List<string>() { "Tomat", "Ost", "Skinka" };
-                AddRecipeToDB("Vesuvio", "Mat", "How to do...", "/img/nophoto.jpg", allIngrediends);
-
-                allIngrediends = new List<string>() { "Tomat", "Ost", "Skinka", "Ananas" };
-                AddRecipeToDB("Hawaii", "Mat", "How to do...", "/img/nophoto.jpg", allIngrediends);
-
-                allIngrediends = new List<string>() { "Tomat", "Ost", "Kebabkött", "Gurka", "Isbergssallad", "Pepperoni", "Kebabsås" };
-                AddRecipeToDB("Kebabpizza", "Mat", "How to do...", "/img/nophoto.jpg", allIngrediends);
-
-                allIngrediends = new List<string>() { "Vaniljvodka", "Sourz Sour Apple", "Limejuice", "Fruktsoda" };
-                AddRecipeToDB("P2", "Dricka", "How to do...", "/img/nophoto.jpg", allIngrediends);
-
-                allIngrediends = new List<string>() { "Vodka", "Blå curacao", "Sprite" };
-                AddRecipeToDB("Blue Lagoon", "Dricka", "How to do...", "/img/nophoto.jpg", allIngrediends);
-
-                allIngrediends = new List<string>() { "Whiskey", "Martini rosso", "Angostura bitter" };
-                AddRecipeToDB("Manhattan", "Dricka", "How to do...", "/img/nophoto.jpg", allIngrediends);
-
-                allIngrediends = new List<string>() { "Rom", "Malibu", "Mjölk", "Ananasjuice" };
-                AddRecipeToDB("Piña Colada", "Dricka", "How to do...", "/img/nophoto.jpg", allIngrediends);
-
-                allIngrediends = new List<string>() { "Vodka", "Redbull", "Is"};
-                AddRecipeToDB("RedbullVodka", "Dricka", "4 cl Vodka och 1 redbull, blanda med is så blir den super!", "/img/nophoto.jpg", allIngrediends);
-
-                allIngrediends = new List<string>() { "Ägg", "Mjölk", "Mjöl", "Smör" };
-                AddRecipeToDB("Pannkaka", "Mat", "Blanda 6 dl mjölk med 3 dl mjöl, Rör om, lägg i 3 ägg och låt den vila 10 minuter innan stekning", "/img/nophoto.jpg", allIngrediends);
-            }
-            #endregion
+            return View();
         }
         public void AddRecipeToDB(string nameOnItem2, string ingrediensType2, string infoAboutItem2, string pictureLink2, List<string> allIngrediends2)
         {
