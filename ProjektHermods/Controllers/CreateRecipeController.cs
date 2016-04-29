@@ -31,8 +31,7 @@ namespace ProjektHermods.Controllers
                 }
                 if (pictureLink == "")
                 {
-                    allaFel += " Du Glömde bild, ändra det nu eller så får du en default bild";
-                    pictureLink = "/img/nophoto.jpg!";
+                    pictureLink = "/img/nophoto.jpg";
                 }
                 else
                 {
