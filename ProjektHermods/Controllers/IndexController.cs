@@ -13,11 +13,19 @@ namespace ProjektHermods.Controllers
         {
             return View();
         }
+
         public ActionResult Kontakt()
         {
             return View();
         }
         public ActionResult FormulärSkickat()
+{
+return View();
+}
+
+        //om det uppstår ett fel på vår sida så vissas denna sidan istället
+        public ActionResult Error()
+
         {
             return View();
         }

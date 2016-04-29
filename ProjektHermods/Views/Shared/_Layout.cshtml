@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+   
     <meta charset="utf-8" />
     <title>ReceptTips.SE © All Rights Reserved</title>
     <!-- Main CSS -->
@@ -9,6 +10,8 @@
     <link rel="stylesheet" href="~/css/bootstrap.min.css" type="text/css">
     <!-- Bootstrap - Fonts -->
     <link rel="stylesheet" href="~/css/creative.css" type="text/css">
+    <!--Bootstrap - awsome fonts-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <!-- Bootstrap - "Flyt"-metoder -->
     <script src="~/js/jquery.js"></script>
     <!-- Bootstrap - "ÖppnaKnapp"-event -->
@@ -17,6 +20,11 @@
     <script src="~/js/jquery.easing.min.js"></script>
     <!-- Bootstrap - Text-anpassning -->
     <script src="~/js/jquery.fittext.js"></script>
+    <!--Autocomplete etc-->
+  
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+ 
     <!-- Bootstrap - Mobilanpassad -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -83,7 +91,9 @@
         </nav>
         <section>
             <div class="row">
-                <div class=" col-lg-8 col-lg-offset-2 text-center">
+
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+
                     @RenderBody()
                 </div>
             </div>
@@ -92,5 +102,6 @@
     <footer class="foot">ReceptTips.SE © All Rights Reserved</footer>
     <!-- Bootstrap - Menyn stängs vid klick -->
     <script src="~/js/creative.js"></script>
+    <script src="~/scripts/JavaScript.js"></script>
 </body>
 </html>

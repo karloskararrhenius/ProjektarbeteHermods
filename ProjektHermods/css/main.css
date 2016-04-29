@@ -70,6 +70,7 @@ ul{
 .greentext{
 	color: lightgreen;
 }
+
 .rating > span:hover:before {
    content: "\2605";
    position: absolute;
@@ -99,4 +100,89 @@ ul{
 }
 .rating{
 	position:;
+}
+.ingredients-div {
+    background: rgba(0,0,0,0.9);
+    color: white;
+    margin-top: 20px;
+    border: 2px, dotted, orange;
+    border-width: 1px;
+}
+.text {
+    text-shadow: 2px 2px black;
+}
+.dina-ingredienser {
+    border: 1px;
+    opacity: 0.5;
+}
+
+.suggested {
+}
+
+#nonSelected {
+    background: rgba(0,0,0,0.9);
+    border-width: 1px;
+    border-style: dotted;
+    border-color: rgba(255,255,255,0.9);
+     height:auto;
+    max-width: 350px;
+    min-height: 150px;
+   
+}
+
+.note-text {
+    color: white;
+}
+
+.note {
+    background: rgba(0,0,0,0.9);
+    top: auto;
+    left: 4%;
+    align-content: flex-start;
+    color: white;
+    border-width: 1px;
+    border-style: dotted;
+    border-color: black;
+    padding: 20px;
+    max-width: 200px;
+    padding-left: 10px;
+    box-shadow: initial;
+}
+
+#selected {
+}
+
+.btn-danger {
+    background-color: black !important;
+    margin: 4px 4px 4px 4px;
+    display: inline;
+}
+
+.margin-top-45 {
+    font-family: Roboto;
+    min-height: 200px;
+    padding-top: 45px;
+}
+
+.ui-autocomplete {
+    background-color: white;
+    max-height: 200px;
+    overflow-y: hidden;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+    /* add padding to account for vertical scrollbar */
+    width: 20px;
+    list-style: none;
+}
+
+ul .ui-autocomplete {
+    left: 1px;
+    list-style: none;
+    text-align: left;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+#SearchText{
+    color:black;
+
 }
