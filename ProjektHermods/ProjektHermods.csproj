@@ -132,6 +132,7 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\creative.css" />
     <Content Include="css\dryck.jpg" />
+    <Content Include="css\ingredienslistan.png" />
     <Content Include="css\logga.png" />
     <Content Include="css\main.css" />
     <Content Include="css\mat.jpg" />

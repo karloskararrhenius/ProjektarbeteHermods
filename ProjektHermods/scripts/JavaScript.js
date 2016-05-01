@@ -1,30 +1,95 @@
 ﻿function moveButton(elem) {
-
+  var id=  elem.getAttribute("data-Id")
     if ($(elem).parent().attr("id") == "nonSelectedT") {
-        $(elem).detach().appendTo('#selected');
+
+        if (document.getElementById('selected').innerHTML.indexOf(id) != -1) {
+          
+        } else {
+            $(elem).detach().appendTo('#selected');
+        }
+
+      
     }
     else if ($(elem).parent().attr("id") == "nonSelected") {
-        $(elem).detach().appendTo('#selected');
+        if (document.getElementById('selected').innerHTML.indexOf(id) != -1) {
+            document.getElementById('small-error').innerHTML += data + " finns inte";
+            document.getElementById('small-error').style.color = "#333333";
+        }
+        else
+        {
+            $(elem).detach().appendTo('#selected');
+        }
+        
+       
+      
     }
 
-    else {
-        $(elem).detach().appendTo('#nonSelected');
+    else
+    {
+        if (document.getElementById('selected').innerHTML.indexOf(id) != -1) {
+            $(elem).detach();
+            $('#nonSelected').prepend(elem);
+        }
+        else
+        {
+
+        
+        $(elem).detach();
+      
+        }
     }
 }
+$("#SearchText").keyup(function (event) {
+    if (event.keyCode == 13) {
+        $("#addtoNote").click();
+    }
+});
+
 function copy() {
+    var elem = document.getElementById('btnDanger');
+    var id = elem.getAttribute("data-Id");
+
     var data = document.getElementById('SearchText').value;
-    if (data.length === 0) {
+  
+    //if (document.getElementById('SearchText').value == "") {
 
 
-    }else{
-        document.getElementById('selected').innerHTML += "<button id='btnDanger' onclick='moveButton(this)' type='button' class='btn-danger'>" + data + "</button><br/>";
+    //}
+   if (document.getElementById('selected').innerHTML.indexOf(data) != -1) {
+
+       
+      alert("Du har redan " + data + " i din lista!!!!")
     }
+   else if (document.getElementById('nonSelected').innerHTML.indexOf(data)!= -1) {
+        $('*[data-Id='+data+']').detach().appendTo('#selected');
+    }
+   else {
+       var oldhtml;
+       var newhtml= data + " finns inte";
+       $('#small-error').fadeOut(500, function () {
+           $('#small-error').html(newhtml).fadeIn();
+           $('#small-error').delay(2000);
+           $('#small-error').fadeIn(500, function () { $('#nyhedsbrev').html(oldhtml); });
+       });
+
+  
+       
+
+   } //document.getElementById('selected').innerHTML += "<button id='btnDanger' onclick='moveButton(this)' type='button' class='btn-danger ingrediens-item'>" + data + "</button><br/>";
+    
     
 }
     
 
-  $(document).ready(function () {
-      $("#SearchText").autocomplete({
+$(document).ready(function () {
+   
+
+   
+
+    $("#SearchText").autocomplete({
+        autoFocus: true,
+        minLength: 0,
+        scroll: true,
           source: function (request, response) {
               $.ajax({
                   url: "/Search/AutoCompleteIngrediens",
@@ -32,7 +97,7 @@ function copy() {
                   dataType: "json",
                   data: { term: request.term },
                   success: function (data) {
-                      if (data.length > 0) {
+                      if (data.length > -1) {
                           response($.map(data, function (item) {
                               return {
                                   label: item.Name,
@@ -40,10 +105,11 @@ function copy() {
                               };
                           }))
                       } else {
-                          response([{ label: 'Inga resultat', val: "" }]);
+                          response([{  label: item.Name, val:item.Name }]);
                       }
                   }
               });
+
           }
           })
       });

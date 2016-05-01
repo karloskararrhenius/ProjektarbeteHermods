@@ -100,34 +100,31 @@ ul{
    position: absolute;
 }
 .rating{
-	position:;
+	
 }
 .ingredients-div {
-    background: rgba(0,0,0,0.9);
+    background: rgba(255,255,255,0.3);
     color: white;
     margin-top: 20px;
     border: 2px, dotted, orange;
     border-width: 1px;
 }
-.text {
-    text-shadow: 2px 2px black;
-}
-.dina-ingredienser {
-    border: 1px;
-    opacity: 0.5;
-}
 
-.suggested {
-}
+
 
 #nonSelected {
-    background: rgba(0,0,0,0.9);
+    margin-top:5%;
+   margin-left:24%; 
+   align-content:center;
+    background: rgba(255,255,255,0.9);
     border-width: 1px;
     border-style: dotted;
     border-color: rgba(255,255,255,0.9);
      height:auto;
     max-width: 350px;
     min-height: 150px;
+
+    padding-bottom:10%;
    
 }
 
@@ -140,14 +137,13 @@ ul{
 }
 
 .note {
-    background: rgba(0,0,0,0.9);
+    background-image: url('ingredienslistan.png');
+  background-size:cover;
     top: auto;
     left: 4%;
-    align-content: flex-start;
+    align-content: center;
     color: white;
-    border-width: 1px;
-    border-style: dotted;
-    border-color: black;
+  
     padding: 20px;
     max-width: 200px;
     padding-left: 10px;
@@ -155,12 +151,22 @@ ul{
 }
 
 #selected {
+    
+    display:block;
+  align-content:center;
 }
 
-.btn-danger {
-    background-color: black !important;
-    margin: 4px 4px 4px 4px;
-    display: inline;
+
+.ingrediens-item {
+    color:black !important;
+    margin-bottom:2%;
+ margin-left: auto; 
+ margin-right: auto;
+    background-color: white !important;
+  border-color:green !important;
+    display:inherit;
+    align-self:center;
+    
 }
 
 .margin-top-45 {
@@ -170,12 +176,12 @@ ul{
 }
 
 .ui-autocomplete {
+    cursor:pointer; 
+    height:120px; 
+  overflow-y:scroll;
     background-color: white;
     max-height: 200px;
-    overflow-y: hidden;
-    /* prevent horizontal scrollbar */
-    overflow-x: hidden;
-    /* add padding to account for vertical scrollbar */
+   
     width: 20px;
     list-style: none;
 }
@@ -190,4 +196,10 @@ ul .ui-autocomplete {
 #SearchText{
     color:black;
 
+}
+#small-error{
+    background: rgba(255,255,255,0.5);
+    position:relative;
+   width:inherit;
+     display:inline-block;
 }
