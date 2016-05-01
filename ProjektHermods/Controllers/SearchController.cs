@@ -16,21 +16,17 @@ namespace ProjektHermods.Controllers
         public ActionResult Index()
             {
 
-
+           
             return View();
             }
-
+      
+    
         public ActionResult Testing()
             {
-            //Ingrediens ingrediens = new Ingrediens();
-            //ingrediens.Name=values["name"];
-            foreach(var item in Request.Form.AllKeys)
-                {
-           var k=     item.ToString();
-                }
+
+
             return View();
             }
-
         public JsonResult AutoCompleteIngrediens(string term)
             {
            ReceptTipsContext context = new ReceptTipsContext();

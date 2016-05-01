@@ -1,10 +1,5 @@
 ﻿function moveButton(elem) {
-    
-
-  
   var id=  elem.getAttribute("data-Id")
-   
-
     if ($(elem).parent().attr("id") == "nonSelectedT") {
 
         if (document.getElementById('selected').innerHTML.indexOf(id) != -1) {
@@ -17,7 +12,8 @@
     }
     else if ($(elem).parent().attr("id") == "nonSelected") {
         if (document.getElementById('selected').innerHTML.indexOf(id) != -1) {
-            document.getElementById('testing').innerHTML += "<p> Innehåller redan " + data + "<p>";
+            document.getElementById('small-error').innerHTML += data + " finns inte";
+            document.getElementById('small-error').style.color = "#333333";
         }
         else
         {
@@ -64,10 +60,22 @@ function copy() {
        
       alert("Du har redan " + data + " i din lista!!!!")
     }
-   else if (document.getElementById('nonSelected').innerHTML.indexOf(data)) {
+   else if (document.getElementById('nonSelected').innerHTML.indexOf(data)!= -1) {
         $('*[data-Id='+data+']').detach().appendTo('#selected');
     }
-        //document.getElementById('selected').innerHTML += "<button id='btnDanger' onclick='moveButton(this)' type='button' class='btn-danger ingrediens-item'>" + data + "</button><br/>";
+   else {
+       var oldhtml;
+       var newhtml= data + " finns inte";
+       $('#small-error').fadeOut(500, function () {
+           $('#small-error').html(newhtml).fadeIn();
+           $('#small-error').delay(2000);
+           $('#small-error').fadeIn(500, function () { $('#nyhedsbrev').html(oldhtml); });
+       });
+
+  
+       
+
+   } //document.getElementById('selected').innerHTML += "<button id='btnDanger' onclick='moveButton(this)' type='button' class='btn-danger ingrediens-item'>" + data + "</button><br/>";
     
     
 }

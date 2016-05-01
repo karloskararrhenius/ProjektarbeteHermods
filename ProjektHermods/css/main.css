@@ -197,3 +197,9 @@ ul .ui-autocomplete {
     color:black;
 
 }
+#small-error{
+    background: rgba(255,255,255,0.5);
+    position:relative;
+   width:inherit;
+     display:inline-block;
+}
