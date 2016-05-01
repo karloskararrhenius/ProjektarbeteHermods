@@ -13,18 +13,18 @@
         <div class="col-lg-8 col-md-8 col-xs-12 col-sm-12">
             <h1 class="text">Välkommen till ReceptTips.se</h1>
             <p class="lead">Sök på vad du <u>har</u> hemma</p>
-        </div>
+        </div>@*Div id innehåller alla knappar du lägger till i dina ingridienser. dom som inte är selected ligger i nonSelected diven under*@
         <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 note" style="color:black;">
-            @*Div id innehåller alla knappar du lägger till i dina ingridienser. dom som inte är selected ligger i nonSelected diven under*@
+
             @using(Html.BeginForm("Testing", "Search", FormMethod.Post))
                 {
                 <div id="selected">
-                <p class="note-text" style="display:block;visibility:hidden;">Dina Ingredienser</p>
+                    <p class="note-text" style="display:block;visibility:hidden;">Dina Ingredienser</p>
                 </div>
-                 <input type="submit" />
+                <input type="submit" />
                 }
-                </div>
-              <div>
+        </div>
+        <div>
         </div>
 
     </div>
@@ -38,8 +38,10 @@
             <label class="control-label">
                 Skriv in dina ingredienser<br />
             </label><p style="font-size:10px;">Skriv * för att se alla ingredienser som finns i våra recept</p>
-            @*SearchText är lilla ingrediensrutan folk fyller på. Inte mycket c# kod men ni hittar metoden i SearchControllern. 
-            Har javascript så att om man trycker enter så klickas button.*@
+            @*SearchText är lilla ingrediensrutan folk fyller på. Inte mycket c# kod men ni hittar metoden i SearchControllern.
+                Har javascript så att om man trycker enter så klickas button.
+                  foreachen nedan lägger till ingredienser.
+                  kött button = öppnar ingredienser, inte bytt namn än, sorry :D*@
             <div id="nonSelectedT" style="color:black;">
                 <input type="text" id="SearchText" />
                 <input type="button" id="addtoNote" onclick="copy()" value="Add" /><br />
@@ -49,14 +51,14 @@
         <div class="col-md-7 col-sm-7 col-xs-7">
             @using(ReceptTipsContext context = new ReceptTipsContext())
                 {
-                //Namnen ska uppdateras, det var vad jag döpte dom när jag trodde att vi skulle ha olika kategorier.
+
                 <input type="button" id="Kött-open-button-1" class=" btn-danger Kött-button Kött-open-button-1" value="Ingredienser">
                 <input type="button" id="Grönsaker-open-button-1" class="btn-danger Grönsaker-open-button-1" value="x">
                 <div style="display: none" id="nonSelected" class="Kött-div-1 div-1">
-                    Lade till lite för många id/name osv men det var för att jag testade. Ska rensa upp här.
+
                     @foreach(var item in context.Ingrediens)
                         {
-                        //MovebuttonThis är en javascript kod som flyttar knappen till "Dina ingredienser" från ingridienslistan
+
                         <input id="btnDanger" data-Id="@item.Name" onclick="moveButton(this)" type="button" class="btn-danger ingrediens-item" name="ingrediens" value=@item.Name>
                         }
                 </div>
