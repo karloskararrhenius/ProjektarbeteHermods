@@ -2,7 +2,8 @@ body {
     background-image: url(../../img/1.jpg);
     background-size: 100% 100%;
     background-attachment: fixed;
-    overflow-x: hidden;  Dölja vertikala scrollen 
+    overflow-x: hidden;  
+    overflow-y:hidden; 
 }
 
 /*p {
@@ -137,7 +138,7 @@ ul{
 }
 
 .note {
-    background-image: url('ingredienslistan.png');
+    background-image: url('../../img/ingredienslistan.png');
   background-size:cover;
     top: auto;
     left: 4%;
