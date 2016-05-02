@@ -89,8 +89,8 @@ namespace ProjektHermods.Controllers
                 IList<Ingrediens> nuvarandeReceptLista = new List<Ingrediens>();
                 for (int i = 0; i < allIngrediends.Count(); i++)
                 {
-                    string newIngrediens = allIngrediends[0];
-                    allIngrediends.RemoveAt(0);
+                    string newIngrediens = allIngrediends[i];
+                   // allIngrediends.RemoveAt(0);
 
                     //Skapa variabel av ny ingrediens
                     Ingrediens nyIng;

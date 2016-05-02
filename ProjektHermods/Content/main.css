@@ -1,75 +1,75 @@
 body {
-	background-image: url("1.jpg");
-	background-size: 100% 100%;
-	background-attachment: fixed;
-	overflow-x: hidden; /* Dölja vertikala scrollen */
+    background-image: url(../../img/1.jpg);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    overflow-x: hidden;  Dölja vertikala scrollen 
 }
 
-p {
-	font-family: verdana;
-	color: white;
+/*p {
+    font-family: verdana;
+    color: white;
 
 }
 li{
-	font-family: verdana;
+    font-family: verdana;
 }
 ul{
-	font-family: verdana;
+    font-family: verdana;
 }
 
 .foot {
-	right: 5px; position: fixed; 
-	bottom: 0px; background-color: black;
-	color: white;
-	font-size: 12px;
+    right: 5px; position: fixed; 
+    bottom: 0px; background-color: black;
+    color: white;
+    font-size: 12px;
 }
 .shadowBox {
-	overflow-x: hidden;
-	overflow-y: auto;
-	/* Fallback for web browsers that don't support RGBa */
+    overflow-x: hidden;
+    overflow-y: auto;
+     Fallback for web browsers that don't support RGBa 
     background-color: rgb(0, 0, 0);
-    /* RGBa with 0.6 opacity */
+     RGBa with 0.6 opacity 
     background-color: rgba(0, 0, 0, 0.6);
-    /* For IE 5.5 - 7*/
+     For IE 5.5 - 7
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
-    /* For IE 8*/
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
-}
+     For IE 8
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";*/
+/*}*/
 .logga{
-	position: absolute;
-	top: 0px;
-	left: 0px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
 }
 
 .picsOnStartPage{
-	height: 400px;
-	width: 400px
+    height: 400px;
+    width: 400px
 }
 .formInMeny {
-	height: 21px;
-	width: 100px;
-	font-size: 12px;
-	color: black;
+    height: 21px;
+    width: 100px;
+    font-size: 12px;
+    color: black;
 
-	font-family: verdana;
+    font-family: verdana;
 }
 
 .menyButton{
-	color: black;
-	height: 22px;
-	font-size: 12px;
-	font-family: verdana;
+    color: black;
+    height: 22px;
+    font-size: 12px;
+    font-family: verdana;
 }
 .standardform {
-	color: black;
-	font-family: verdana;
+    color: black;
+    font-family: verdana;
 }
 .standardknapp{
-	color: black;
-	font-family: verdana;
+    color: black;
+    font-family: verdana;
 }
 .greentext{
-	color: lightgreen;
+    color: lightgreen;
 }
 
 .rating > span:hover:before {
@@ -100,7 +100,7 @@ ul{
    position: absolute;
 }
 .rating{
-	
+    
 }
 .ingredients-div {
     background: rgba(255,255,255,0.3);

@@ -130,7 +130,7 @@ aside {
 
 @media(min-width:768px) {
     .navbar-default {
-		/* THOM färg på bakgrund BREDSIDA (STANDARD) */
+        /* THOM färg på bakgrund BREDSIDA (STANDARD) */
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.9);
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
