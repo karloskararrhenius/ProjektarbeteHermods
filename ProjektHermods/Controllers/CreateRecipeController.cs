@@ -31,7 +31,7 @@ namespace ProjektHermods.Controllers
                 }
                 if (pictureLink == "")
                 {
-                    allaFel += "Ändra bil annars blir det /img/nophoto.jpg!";
+                    allaFel += "Ändra bild annars blir det /img/nophoto.jpg!";
                     pictureLink = "/img/nophoto.jpg";
                 }
                 else
