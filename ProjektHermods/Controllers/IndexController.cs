@@ -64,6 +64,46 @@ namespace ProjektHermods.Controllers
 
         public ActionResult Kontakt()
         {
+            if (Request["buttonAdd"] != null)
+            {
+
+            
+                
+            string allaFel = "";
+            string nameVariabel = Request["inputText"];
+            string nameEmail = Request["inputEmail"];
+            string nameSelectTopic = Request["selectTopic"];
+            string nameTextArea = Request["inputTextArea"];
+
+            if (nameEmail == "")
+            {
+                allaFel += "Du glömde skriva in Email!";
+            }
+
+            if (nameVariabel == "")
+            {
+                allaFel += "Du glömde skriva in ditt namn!";
+            }
+            if (nameSelectTopic == "")
+            {
+                allaFel += "Du valde inget alternativ!";
+            }
+            if (nameTextArea == "")
+            {
+                allaFel += "Skriv in ett meddelande, så vi vet vad du behöver hjälp med";
+            }
+                if (allaFel != "")
+                {
+                    ViewBag.Felmeddelande = allaFel;
+
+                    ViewBag.nameVariabel = Request["inputText"];
+                    ViewBag.nameEmail = Request["inputEmail"];
+                    ViewBag.nameSelectTopic = Request["selectTopic"];
+                    ViewBag.nameTextArea = Request["inputTextArea"];
+
+                }
+
+            }
             return View();
         }
         public ActionResult FormulärSkickat()
