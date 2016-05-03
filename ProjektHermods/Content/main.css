@@ -2,12 +2,8 @@ body {
     background-image: url(../../img/1.jpg);
     background-size: 100% 100%;
     background-attachment: fixed;
-    overflow-x: hidden;  
-    overflow-y:auto; 
-<<<<<<< HEAD
-=======
-    
->>>>>>> 7cdc1441c4632c3a6ada4c1b7749d529e2ac4a58
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 /*p {
@@ -204,15 +200,10 @@ ul .ui-autocomplete {
 }
 #small-error{
     background: rgba(255,255,255,0.5);
-<<<<<<< HEAD
+
     position:relative;
    width:inherit;
      display:inline-block;
-}
-=======
-    position: relative;
-    width: inherit;
-    display: inline-block;
 }
 
 footer {
@@ -472,4 +463,4 @@ div.img-list div:hover span.text-content {
     -webkit-box-shadow: 0px 5px 10px 10px black;
     box-shadow: 1px 1px 50px 1px #000000;
 }
->>>>>>> 7cdc1441c4632c3a6ada4c1b7749d529e2ac4a58
+
