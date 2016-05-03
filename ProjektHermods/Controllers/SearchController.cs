@@ -9,49 +9,43 @@ using System.Web.Mvc;
 using ProjektHermods.Models;
 
 namespace ProjektHermods.Controllers
-    {
+{
     public class SearchController : Controller
-        {
-     
+    {
+
         public ActionResult Index()
-            {
+        {
 
            
             return View();
-            }
-      
-    
-        public ActionResult Testing()
-            {
+        }
 
 
-            return View();
-            }
+       
         public JsonResult AutoCompleteIngrediens(string term)
+        {
+            ReceptTipsContext context = new ReceptTipsContext();
+
+            if (term.Contains("*"))
             {
-           ReceptTipsContext context = new ReceptTipsContext();
-        
-          if(term.Contains("*"))
-                {
-              
-                
-                    var result = (from r in context.Ingrediens
-                                  orderby r.Name
-                               
-                                  select new { r.Name }).Distinct();
-                    return Json(result, JsonRequestBehavior.AllowGet);
-                   
-                }
-             else
-                {
-                 var result = (from r in context.Ingrediens
-                               orderby r.Name
-                               where r.Name.ToLower().StartsWith(term.ToLower())
-                          select new { r.Name }).Distinct();
+
+
+                var result = (from r in context.Ingrediens
+                              orderby r.Name
+                              select new { r.Name }).Distinct();
                 return Json(result, JsonRequestBehavior.AllowGet);
-                }
-         
 
             }
+            else
+            {
+                var result = (from r in context.Ingrediens
+                              orderby r.Name
+                              where r.Name.ToLower().StartsWith(term.ToLower())
+                              select new { r.Name }).Distinct();
+                return Json(result, JsonRequestBehavior.AllowGet);
+            }
+
+
         }
     }
+}

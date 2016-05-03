@@ -93,16 +93,48 @@
         <section>
             <div class="row">
 
-                <div class="shadowBox col-lg-8 col-lg-offset-2 text-center">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
 
                     @RenderBody()
                 </div>
             </div>
         </section>
     </header>
-    <footer class="foot">ReceptTips.SE © All Rights Reserved</footer>
+    @*<footer class="foot">ReceptTips.SE © All Rights Reserved</footer>*@
     <!-- Bootstrap - Menyn stängs vid klick -->
     <script src="~/scripts/creative.js"></script>
     <script src="~/scripts/JavaScript.js"></script>
+    <footer class="footer-distributed">
+
+        <div class="footer-right">
+
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-github"></i></a>
+
+        </div>
+
+        <div class="footer-left">
+
+            <p class="footer-links">
+                <a href="/Index/Index">Startsida</a>
+                ·
+                <a href="/Search/Index">Sök</a>
+                ·
+                <a href="/Food/Index">Mat</a>
+                ·
+                <a href="/Drink/Index">Drink</a>
+                ·
+                <a href="/Index/Kontakt">Kontakt</a>
+
+            </p>
+
+            <p>ReceptTips.se &copy; 2016</p>
+        </div>
+
+    </footer>
+
+
 </body>
 </html>

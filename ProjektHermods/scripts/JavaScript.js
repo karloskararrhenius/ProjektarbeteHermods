@@ -48,28 +48,23 @@ $("#SearchText").keyup(function (event) {
 function copy() {
     var elem = document.getElementById('btnDanger');
     var id = elem.getAttribute("data-Id");
-
     var data = document.getElementById('SearchText').value;
-  
-    //if (document.getElementById('SearchText').value == "") {
 
-
-    //}
-   if (document.getElementById('selected').innerHTML.indexOf(data) != -1) {
-
-       
+    if (document.getElementById('selected').innerHTML.indexOf(data) != -1) 
+    {    
       alert("Du har redan " + data + " i din lista!!!!")
     }
    else if (document.getElementById('nonSelected').innerHTML.indexOf(data)!= -1) {
         $('*[data-Id='+data+']').detach().appendTo('#selected');
-    }
+   }
+
    else {
        var oldhtml;
        var newhtml= data + " finns inte";
        $('#small-error').fadeOut(500, function () {
            $('#small-error').html(newhtml).fadeIn();
            $('#small-error').delay(2000);
-           $('#small-error').fadeIn(500, function () { $('#nyhedsbrev').html(oldhtml); });
+           $('#small-error').fadeIn(500, function () { $('#small-error').html(oldhtml); });
        });
 
   
@@ -79,13 +74,27 @@ function copy() {
     
     
 }
-    
+function clearForm()
+{
+    var elem = document.getElementById('btnDanger');
+    var id = elem.getAttribute("data-Id");
+    var div = document.getElementById('selected');
+    while (document.getElementById('selected').innerHTML.indexOf(elem) != -1) {
+        if ($("#selected").find("#btnDanger").length > 0) {
+            $(elem).detach();
+            $('#nonSelected').prepend(elem);
+        }
+        else {
+
+        }
+    }
+}
+       
+
+
 
 $(document).ready(function () {
-   
-
-   
-
+ 
     $("#SearchText").autocomplete({
         autoFocus: true,
         minLength: 0,

@@ -1,15 +1,28 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title="Index";
 }
 
-<h3>Välkommen @if ((bool)Session["IsLoggedIn"]){ <span class="greentext"><strong>@Session["username"]</strong></span>} till <strong>ReceptTips.SE</strong>!</h3>
+<h3>Välkommen @if((bool)Session["IsLoggedIn"])
+    { <span class="greentext"><strong>@Session["username"]</strong></span>} till <strong>ReceptTips.SE</strong>!</h3>
 <p>Vad önskar du idag?</p>
 
 <div>
     <div class="row">
-        <div class="col-md-6"><a href="/ReceptsMat/Index"><img class="picsOnStartPage" src="~/img/mat.jpg" alt="Mat" /></a></div>
-        <div class="col-md-6"><a href="/Recepts/Index"><img class="picsOnStartPage" src="~/img/dryck.jpg" alt="Dryck" /></a></div>
+        <div class="col-md-6 img-list">
+            <div>
+                <a href="/ReceptsMat/Index" class="classa" id="classa" alt="Mat">
+                    <span class="text-content"><span>Mat</span></span>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-6 img-list">
+            <div>
+                <a href="/ReceptsMat/Index" class="classb" id="classa">
+                    <span class="text-content"><span>Dryck</span></span>
+                </a>
+            </div>
+        </div>
     </div>
 </div>
 <br />

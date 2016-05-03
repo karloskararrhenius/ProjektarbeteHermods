@@ -4,6 +4,10 @@ body {
     background-attachment: fixed;
     overflow-x: hidden;  
     overflow-y:auto; 
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 7cdc1441c4632c3a6ada4c1b7749d529e2ac4a58
 }
 
 /*p {
@@ -200,7 +204,272 @@ ul .ui-autocomplete {
 }
 #small-error{
     background: rgba(255,255,255,0.5);
+<<<<<<< HEAD
     position:relative;
    width:inherit;
      display:inline-block;
 }
+=======
+    position: relative;
+    width: inherit;
+    display: inline-block;
+}
+
+footer {
+      border-top:1px dashed white;
+    
+    background-color: #292c2f;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 55px 50px;
+    margin-top: 80px;
+    bottom: 0;
+    color: #fff;
+}
+
+.footer-distributed {
+    background-color: #292c2f;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: normal 16px sans-serif;
+    padding: 45px 50px;
+    margin-top: 80px;
+}
+
+    .footer-distributed .footer-left p {
+        color: #8f9296;
+        font-size: 14px;
+        margin: 0;
+    }
+
+    /* Footer links */
+
+    .footer-distributed p.footer-links {
+        font-size: 18px;
+        font-weight: bold;
+        color: #ffffff;
+        margin: 0 0 10px;
+        padding: 0;
+    }
+
+        .footer-distributed p.footer-links a {
+            display: inline-block;
+            line-height: 1.8;
+            text-decoration: none;
+            color: inherit;
+        }
+
+    .footer-distributed .footer-right {
+        float: right;
+        margin-top: 6px;
+        max-width: 180px;
+    }
+
+        .footer-distributed .footer-right a {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            background-color: #33383b;
+            border-radius: 2px;
+            font-size: 20px;
+            color: #ffffff;
+            text-align: center;
+            line-height: 35px;
+            margin-left: 3px;
+        }
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 600px) {
+
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-right {
+        text-align: center;
+    }
+
+    .footer-distributed .footer-right {
+        float: none;
+        margin: 0 auto 20px;
+    }
+
+    .footer-distributed .footer-left p.footer-links {
+        line-height: 1.8;
+    }
+}
+
+div.img-list {
+    align-content: center;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+    div.img-list > div {
+        display: inline-block;
+        align-content: center;
+        margin: 0 1em 1em 0;
+        position: relative;
+        background: fixed;
+        text-align: center;
+    }
+
+
+span.text-content {
+    /*font-family: 'Great Vibes', cursive;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.7);
+    padding-left: 10%;
+    padding-top: 25%;
+    text-align: center;
+    min-width: 400px;
+    min-height: 400px;
+    color: white;
+    font-size: 5em;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    top: 0;
+    margin: auto;
+    opacity: 0;
+    -webkit-transition: opacity 500ms;
+    -moz-transition: opacity 500ms;
+    -o-transition: opacity 500ms;
+    transition: opacity 500ms;*/
+}
+
+.classb {
+    background-image: url("../img/DRYCK.png");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    display: inline-block;
+    width: 500px;
+    height: 600px;
+    border-color: rgba(0,0,0,0);
+    border-radius: 100%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: 0.5s ease;
+    -moz-transition: 0.5s ease;
+    -ms-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
+    transition: 0.5s ease;
+}
+
+.classa {
+    background-image: url("../img/MAT.png");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    background-size: cover;
+    display: inline-block;
+    width: 500px;
+    height: 600px;
+    border-color: rgba(0,0,0,0);
+    border-radius: 100%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: 0.5s ease;
+    -moz-transition: 0.5s ease;
+    -ms-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
+    transition: 0.5s ease;
+}
+
+#classa {
+    border: 17.5em dashed rgba(0, 0, 0, 0);
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 20px;
+    -moz-border-radius-bottomright: 30px;
+    -moz-border-radius-bottomleft: 0;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 20px;
+    -webkit-border-bottom-right-radius: 30px;
+    -webkit-border-bottom-left-radius: 0;
+}
+
+    #classa:hover {
+        border: 1px dashed rgba(0, 0, 0, 0.7);
+    }
+
+.classa:hover, .classb:hover {
+    border-width: 0;
+    border-color: rgba(0, 0, 0, 0.5);
+}
+
+span.text-content span {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+div.img-list div:hover span.text-content {
+    text-align: center;
+    opacity: 1;
+}
+
+#JumboSearch {
+    
+    background: url('../img/jumbo.jpg');
+    opacity:0.9;
+    background-size: 100%;
+    background-repeat:no-repeat;
+    background-position: 30% center;
+    min-height: 300px;
+    box-shadow:black, 10px 10px 10px inset;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    -moz-border-radius-bottomright: 30px;
+    -moz-border-radius-bottomleft: 0;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 20px;
+    -webkit-border-bottom-right-radius: 30px;
+    -webkit-border-bottom-left-radius: 0;
+    -webkit-box-shadow: 0px 5px 10px 10px black;
+    box-shadow: 1px 1px 50px 1px #000000;
+}
+.textbutton{
+     width:100px;
+    text-align:center;
+    font-size:13px;
+    padding:3px;
+}
+.product{
+    border: 2px, dotted, orange;
+    border-width: 1px;
+    border: 1px dashed white;
+    -webkit-box-shadow: 20px 5px 10px 10px  rgba(255, 255, 255, 0.1);
+    box-shadow: 20px 1px 50px 1px #000000;
+}
+
+.JumboDrink {
+    background: url('http://listsurge.com/wp-content/uploads/2016/02/drinks.jpg');
+    opacity:0.9;
+    background-size: 100%;
+    background-repeat:no-repeat;
+    background-position: 30% center;
+    min-height: 300px;
+    box-shadow:black, 10px 10px 10px inset;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    -moz-border-radius-bottomright: 30px;
+    -moz-border-radius-bottomleft: 0;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 20px;
+    -webkit-border-bottom-right-radius: 30px;
+    -webkit-border-bottom-left-radius: 0;
+    -webkit-box-shadow: 0px 5px 10px 10px black;
+    box-shadow: 1px 1px 50px 1px #000000;
+}
+>>>>>>> 7cdc1441c4632c3a6ada4c1b7749d529e2ac4a58

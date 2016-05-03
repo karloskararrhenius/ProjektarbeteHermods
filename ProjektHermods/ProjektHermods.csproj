@@ -148,12 +148,15 @@
     <Content Include="img\1.jpg" />
     <Content Include="Content\creative.css" />
     <Content Include="img\dryck.jpg" />
+    <Content Include="img\DRYCK.png" />
     <Content Include="img\ingredienslistan.png" />
+    <Content Include="img\jumbo.jpg" />
     <Content Include="img\logga.png" />
     <Content Include="Content\main.css" />
     <Content Include="img\mat.jpg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="img\MAT.png" />
     <Content Include="img\nophoto.jpg" />
     <Content Include="scripts\creative.js" />
     <Content Include="scripts\jquery.easing.min.js" />
@@ -184,6 +187,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\SearchResult.cs" />
     <Compile Include="Models\Ingrediens.cs" />
     <Compile Include="Models\Recept.cs" />
     <Compile Include="Models\ChoosenType.cs" />
