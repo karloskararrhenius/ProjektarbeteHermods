@@ -6,14 +6,14 @@
 
 <h1>Recept</h1>
 
-<div class="jumbotron" style="background-image:url(https://cdn3.cdnme.se/cdn/7-1/2907590/images/2011/drinkar_163425595.jpg);background-size:cover;" alt="Drinkar">
+<div class="jumbotron JumboDrink" >
     <div class="container">
-        <h1><span class="blacktext">Drinkar</span></h1>
-        <p class="blacktext">Välkommen till ReceptTips Drink sida!</p>
+        <h1><span>Drinkar</span></h1>
+        <p>Välkommen till ReceptTips Drink sida!</p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
     </div>
 </div>
-<h3 text-align: center;">Välj Ingridiens</h3>
+<h3 text-align: center;">Välj Ingrediens</h3>
 <div class="row">
 
     <a href="#" class="btn btn-primary btn-lg col-lg-2">Vodka</a>
@@ -26,7 +26,7 @@
 </div>
 <br />
 <div class="row">
-    <form class="navbar-form navbar-left" role="search">
+    <form class="navbar-form navbar-left product" role="search">
         <div class="form-group">
             <input type="text" class="form-control" style="width: 1150px;" placeholder="Search">
         </div>
@@ -38,10 +38,10 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 
-<div class="row">
+<div class="row ">
     @foreach (var item in Model.Where(r => r.ChoosenTypes.Typ == "Dricka"))
     {
-        <div class="col-sm-6 col-md-4 col-lg-4">
+        <div class="col-sm-6 col-md-4 col-lg-4 product">
             <div class="thumbnail">
                 <img src="@item.Picture" alt="Bild hittades ej">
                 <div class="caption">

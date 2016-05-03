@@ -447,11 +447,38 @@ div.img-list div:hover span.text-content {
     -webkit-border-bottom-right-radius: 30px;
     -webkit-border-bottom-left-radius: 0;
     -webkit-box-shadow: 0px 5px 10px 10px black;
-box-shadow: 1px 1px 50px 1px #000000;
+    box-shadow: 1px 1px 50px 1px #000000;
 }
 .textbutton{
      width:100px;
     text-align:center;
     font-size:13px;
     padding:3px;
+}
+.product{
+    border: 2px, dotted, orange;
+    border-width: 1px;
+    border: 1px dashed white;
+    -webkit-box-shadow: 20px 5px 10px 10px  rgba(255, 255, 255, 0.1);
+    box-shadow: 20px 1px 50px 1px #000000;
+}
+
+.JumboDrink {
+    background: url('http://listsurge.com/wp-content/uploads/2016/02/drinks.jpg');
+    opacity:0.9;
+    background-size: 100%;
+    background-repeat:no-repeat;
+    background-position: 30% center;
+    min-height: 300px;
+    box-shadow:black, 10px 10px 10px inset;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    -moz-border-radius-bottomright: 30px;
+    -moz-border-radius-bottomleft: 0;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 20px;
+    -webkit-border-bottom-right-radius: 30px;
+    -webkit-border-bottom-left-radius: 0;
+    -webkit-box-shadow: 0px 5px 10px 10px black;
+    box-shadow: 1px 1px 50px 1px #000000;
 }
