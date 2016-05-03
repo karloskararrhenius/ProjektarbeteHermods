@@ -9,17 +9,95 @@
 @if ((bool)Session["IsLoggedIn"] == true)
 {
 
+@*
+     <form method="post" action="/CreateRecipe/Index">
+        <input class="standardform" type="text" placeholder="Namn" name="NameInput"/><br />
+        <input type="radio" value="Mat" name="TypInput"> Mat -
+        <input type="radio" value="Dricka" name="TypInput" checked/> Dricka<br />
+        <input class="standardform" type="text" placeholder="BildAdress" name="PictureInput"/><br />
+        <input class="standardform" type="text" placeholder="Ingredienser" name="IngrediensInput"/><br />
+        <textarea rows="4" cols="50" class="standardform" type="text" placeholder="Info" name="InfoInput"></textarea><br />
+        <input class="standardknapp"type="submit" value="Lägg Till" name="buttonAdd"/>
+    </form>
+*@
+<form class="form-horizontal col-lg-6" style="position:center;">
+    <fieldset>
+        <div class="form-group">
+            <label for="inputPassword" class="col-lg-2 control-label">Namn</label>
+            <div class="col-lg-10">
+                @if (ViewBag.nameOnItem == null)
+                {
+                    <input type="text" class="form-control standardform" placeholder="Namn" name="NameInput">
+                }
+                else
+                {
+                    <input type="text" class="form-control standardform" placeholder="Namn" name="NameInput" value="@ViewBag.nameOnItem">
+                }
 
-<form  method="post" action="/CreateRecipe/Index">
-    <input class="standardform" type="text" placeholder="Namn" name="NameInput"/><br />
-    <input type="radio" value="Mat" name="TypInput"> Mat - 
-    <input type="radio" value="Dricka" name="TypInput" checked/> Dricka<br />
-    <input class="standardform" type="text" placeholder="BildAdress" name="PictureInput"/><br />
-    <input class="standardform" type="text" placeholder="Ingredienser" name="IngrediensInput"/><br />
-    <textarea rows="4" cols="50" class="standardform" type="text" placeholder="Info" name="InfoInput"></textarea><br />
-    <input class="standardknapp"type="submit" value="Lägg Till" name="buttonAdd"/>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Val</label>
+            <div class="col-lg-10">
+                <input type="radio" value="Mat" name="TypInput"> Mat -
+                <input type="radio" value="Dricka" name="TypInput" checked /> Dricka<br />
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Bild" class="col-lg-2 control-label">BildAdress</label>
+            <div class="col-lg-10">
+                @if (ViewBag.pictureLink == null)
+                {
+
+                    <input type="text" class="form-control standardform" placeholder="BildAdress" name="PictureInput">
+                }
+                else
+                {
+                    <input type="text" class="form-control standardform" placeholder="BildAdress" name="PictureInput" value="@ViewBag.pictureLink">
+                }
+
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="textArea" class="col-lg-2 control-label">Recept</label>
+            <div class="col-lg-10">
+                @if (ViewBag.infoAboutItem == null)
+                {
+                    <textarea class="form-control standardform" rows="3" id="textArea" name="InfoInput"></textarea>
+                }
+                else
+                {
+                    <textarea class="form-control" rows="3" id="textArea" name="InfoInput">@ViewBag.infoAboutItem</textarea>
+                }
+
+                <span class="help-block"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">Ingredienser</label>
+            <div class="col-lg-10">
+                @if (ViewBag.allIngrediends == null)
+                {
+                    <input type="text" class="form-control standardform" placeholder="Ingredienser" name="IngrediensInput">
+                }
+                else
+                {
+                    <input type="text" class="form-control standardform" placeholder="Ingredienser" name="IngrediensInput" value="@ViewBag.allIngrediends">
+                }
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <input class="standardknapp" type="submit" value="Lägg Till" name="buttonAdd" />
+            </div>
+        </div>
+    </fieldset>
 </form>
-    if (ViewBag.Felmeddelande != null)
+
+   if (ViewBag.Felmeddelande != null)
     {
         string[] input = ViewBag.Felmeddelande.Split('!');
         for (int i = 0; i < input.Count(); i++)

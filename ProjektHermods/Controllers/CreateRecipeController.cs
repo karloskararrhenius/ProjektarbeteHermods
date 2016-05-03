@@ -31,6 +31,7 @@ namespace ProjektHermods.Controllers
                 }
                 if (pictureLink == "")
                 {
+                    allaFel += "Ändra bil annars blir det /img/nophoto.jpg!";
                     pictureLink = "/img/nophoto.jpg";
                 }
                 else
@@ -66,6 +67,11 @@ namespace ProjektHermods.Controllers
                 if (allaFel != "")
                 {
                     ViewBag.Felmeddelande = allaFel;
+                    ViewBag.nameOnItem = Request["NameInput"];  
+                    ViewBag.ingrediensType = Request["TypInput"]; 
+                    ViewBag.infoAboutItem = Request["InfoInput"]; 
+                    ViewBag.pictureLink = Request["PictureInput"]; 
+                    ViewBag.allIngrediends = Request["IngrediensInput"];
                 }
             }
             return View();
