@@ -21,6 +21,7 @@ namespace ProjektHermods.Controllers
                 string infoAboutItem = Request["InfoInput"]; //Sätter infoaboutitem till det du skrivr i formuläret
                 string pictureLink = Request["PictureInput"]; //Bildadress, "img/nophoto.jpg" = (För standardbild)
                 string allIngrediends = Request["IngrediensInput"]; //Sätter allingrediends till det du skrivr i formuläret
+                int tillagningstid = Convert.ToInt32(Request["Tid"]);
                 if (nameOnItem == "")
                 {
                     allaFel += " Du glömde ett namn!";
@@ -62,12 +63,13 @@ namespace ProjektHermods.Controllers
                 {
 
                 
-                AddRecipeToDB(nameOnItem, ingrediensType, infoAboutItem, pictureLink, allIngrediens);//slutligen lägger till i databasen
+                AddRecipeToDB(nameOnItem, ingrediensType, infoAboutItem, pictureLink, allIngrediens, tillagningstid);//slutligen lägger till i databasen
                 }
                 if (allaFel != "")
                 {
                     ViewBag.Felmeddelande = allaFel;
-                    ViewBag.nameOnItem = Request["NameInput"];  
+                    ViewBag.nameOnItem = Request["NameInput"];
+                    ViewBag.tillagningstid = Request["Tid"];
                     ViewBag.ingrediensType = Request["TypInput"]; 
                     ViewBag.infoAboutItem = Request["InfoInput"]; 
                     ViewBag.pictureLink = Request["PictureInput"]; 
@@ -76,7 +78,7 @@ namespace ProjektHermods.Controllers
             }
             return View();
         }
-        public void AddRecipeToDB(string nameOnItem2, string ingrediensType2, string infoAboutItem2, string pictureLink2, List<string> allIngrediends2)
+        public void AddRecipeToDB(string nameOnItem2, string ingrediensType2, string infoAboutItem2, string pictureLink2, List<string> allIngrediends2, int tid2)
         {
             //Skapa massa "startdata" till DB vid startup (Om DB är tom)
             using (ReceptTipsContext context = new ReceptTipsContext())
@@ -87,9 +89,9 @@ namespace ProjektHermods.Controllers
                 string nameOnItem = nameOnItem2; //Namn på grejen!
                 string ingrediensType = ingrediensType2; //Dricka eller Mat
                 string infoAboutItem = infoAboutItem2; //Diverse info
-                string pictureLink = pictureLink2; //Bildadress, "img/nophoto.jpg" = (För standardbild)
+                string pictureLink = pictureLink2;//Bildadress, "img/nophoto.jpg" = (För standardbild)
                 List<string> allIngrediends = allIngrediends2; //ListVariabel för Valda ingredienser
-
+                int tillagningstid = tid2;//tid på saker
                 #region Lägga till vald Ingrediens i en Lista (Till Fullständiga receptet sen)
                 //Skapa en TOM Lista för nytt Recept
                 IList<Ingrediens> nuvarandeReceptLista = new List<Ingrediens>();
@@ -128,6 +130,7 @@ namespace ProjektHermods.Controllers
                 Recept nyttRecept = new Recept()
                 {
                     Name = nameOnItem,
+                    Tid = tillagningstid,
                     ChoosenTypes = choosenType,
                     Info = infoAboutItem,
                     Picture = pictureLink,

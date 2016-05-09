@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 
+
 namespace ProjektHermods.Models
 {
     public class Recept
@@ -8,6 +9,8 @@ namespace ProjektHermods.Models
         public string Name { get; set; }
         public virtual ChoosenType ChoosenTypes { get; set; }
         public string Info { get; set; }
+
+        public int Tid { get; set; }
         public string Picture { get; set; }
         public virtual IList<Ingrediens> Ingredients { get; set; }
     }

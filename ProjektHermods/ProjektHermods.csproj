@@ -188,6 +188,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605091104256_InitialCreate.cs" />
+    <Compile Include="Migrations\201605091104256_InitialCreate.Designer.cs">
+      <DependentUpon>201605091104256_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605091107220_Tillagningstid.cs" />
+    <Compile Include="Migrations\201605091107220_Tillagningstid.Designer.cs">
+      <DependentUpon>201605091107220_Tillagningstid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\SearchResult.cs" />
     <Compile Include="Models\Ingrediens.cs" />
     <Compile Include="Models\Recept.cs" />
@@ -230,6 +239,14 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\SearchResult\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201605091104256_InitialCreate.resx">
+      <DependentUpon>201605091104256_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605091107220_Tillagningstid.resx">
+      <DependentUpon>201605091107220_Tillagningstid.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
